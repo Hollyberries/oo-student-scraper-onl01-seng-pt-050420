@@ -31,8 +31,13 @@ class Scraper
         student[:twitter] = link
       else
         student[:blog] = link
+      end
     end
-    end
+   
+    student[:profile_quote] = profile_page.css(".profile-quote").text if profile_page.css(".profile-quote")
+    student[:bio] = profile_page.css("div.bio-content.content-holder div.description-holder p").text (profile_page.css("div.bio-content.content-holder div.description-holder p")
 
-end
+    student
+  end
+
 end
